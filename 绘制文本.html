@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        canvas {
+            border:1px solid #ccc
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="150" height="150"></canvas>
+</body>
+</html>
+<script>
+    window.onload  = function(){
+        var canvas = document.querySelector('#canvas');
+        if(canvas.getContext){
+            var ctx = canvas.getContext('2d');
+            //在下面进行你的画布操作
+            ctx.font = '14px Micsoft YaHei';
+            //ctx.fillText('hello world',10,75);
+            ctx.textAlign = 'center';
+            ctx.direction = '';
+            ctx.textBaseline = 'bottom';
+            ctx.strokeText('hello world',75,75);
+
+        }else{
+            alert("您的浏览器不支持当前canvas操作,请返回重新修改");
+        }
+    }
+</script>

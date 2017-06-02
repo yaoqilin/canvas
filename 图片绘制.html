@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        canvas {
+            border:1px solid #ccc
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="150" height="150"></canvas>
+</body>
+</html>
+<script>
+    window.onload  = function(){
+        var canvas = document.querySelector('#canvas');
+        if(canvas.getContext){
+            var ctx = canvas.getContext('2d');
+            //在下面进行你的画布操作
+            var img = new Image();
+            img.src = 'img/skies.jpg';
+            img.onload = function(){
+                //drawImage的参数
+                //1.图片的对象
+                //2.图片的起始X轴的坐标
+                //3.图片的起始Y轴的坐标
+                //4.图片的宽度
+                //5.图片的高度
+                //6.切片的X轴的坐标
+                //7.切片的Y轴的坐标
+                //8.切片的宽度
+                //9.切换的高度
+                //相框的图片
+                var img2 = new Image();
+                img2.src = 'img/kuang.jpg';
+                ctx.drawImage(img2,10,10,130,140);
+                ctx.drawImage(img,0,0,150,150,25,25,100,100);
+                /*ctx.beginPath();
+                ctx.moveTo(30,96);
+                ctx.lineTo(70,66);
+                ctx.lineTo(103,76);
+                ctx.lineTo(170,15);
+                ctx.stroke();*/
+
+
+
+            }
+
+        }else{
+            alert("您的浏览器不支持当前canvas操作,请返回重新修改");
+        }
+    }
+</script>

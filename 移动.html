@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        canvas {
+            border:1px solid #ccc
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="150" height="150"></canvas>
+</body>
+</html>
+<script>
+    window.onload  = function(){
+        var canvas = document.querySelector('#canvas');
+        if(canvas.getContext){
+            var ctx = canvas.getContext('2d');
+            //在下面进行你的画布操作
+            ctx.beginPath();
+            ctx.strokeRect(65,45,10,50);
+
+            ctx.save();
+            ctx.translate(0,-15);
+            ctx.rotate(0.20);
+            ctx.strokeRect(65,45,10,50);
+
+            ctx.translate(0,-15);
+            ctx.rotate(0.20);
+            ctx.strokeRect(65,45,10,50);
+
+            ctx.restore();
+
+            ctx.translate(0,20);
+            ctx.rotate(-0.25);
+            ctx.strokeRect(65,45,10,50);
+
+            ctx.translate(0,20);
+            ctx.rotate(-0.25);
+            ctx.strokeRect(65,45,10,50);
+
+            ctx.translate(0,20);
+            ctx.rotate(-0.25);
+            ctx.strokeRect(65,45,10,50);
+
+
+
+
+
+        }else{
+            alert("您的浏览器不支持当前canvas操作,请返回重新修改");
+        }
+    }
+</script>

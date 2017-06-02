@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        canvas {
+            border:1px solid #ccc
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="150" height="150"></canvas>
+</body>
+</html>
+<script>
+    window.onload  = function(){
+        var canvas = document.querySelector('#canvas');
+        if(canvas.getContext){
+            var ctx = canvas.getContext('2d');
+            //在下面进行你的画布操作
+            //1.创建一个图片的对象
+            var img = new Image();
+            img.src = 'img/sun.png';
+            //2.图片加载完成之后，引入到canvas中去
+            img.onload = function(){
+                var ptrn = ctx.createPattern(img,'repeat');
+                ctx.fillStyle = ptrn;
+                ctx.fillRect(0,0,150,150);
+            }
+
+        }else{
+            alert("您的浏览器不支持当前canvas操作,请返回重新修改");
+        }
+    }
+</script>

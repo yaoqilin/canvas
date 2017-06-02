@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        canvas {
+            border:1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="150" height="150"></canvas>
+
+</body>
+</html>
+<script>
+    window.onload = function(){
+        var canvas = document.querySelector('#canvas');
+        if(canvas.getContext){
+            var ctx = canvas.getContext('2d');
+            //用贝塞尔曲线画不规则的线条
+            //画图开始
+            ctx.beginPath();
+            //笔触位置
+            ctx.moveTo(75,25);
+            //然后通过x,y,ctlX,ctlY来进行控制，x,y是当前的坐标,ctlX,ctlY是控制点的坐标
+
+            //控制点向右偏移
+            ctx.quadraticCurveTo(100,25,100,50);
+            //控制点向下偏移
+            ctx.quadraticCurveTo(100,100,60,40);
+            //控制点向左偏移
+            ctx.quadraticCurveTo(50,40,70,30);
+            //控制点向上偏移
+            ctx.quadraticCurveTo(75,25,75,25);
+            ctx.stroke();
+
+
+            //这里总结下：
+
+            /*画一些规则图形
+            1.矩形 fillRect 实心矩形  strokeRect 空心矩形 clearRect 空白矩形
+            2.圆形 arc 圆形
+            3.直线 lineTo 直线*/
+
+           /* 画不规则图形
+            1.二次贝塞尔曲线
+            2.三次贝塞尔曲线*/
+
+
+        }
+    }
+</script>

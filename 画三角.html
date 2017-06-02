@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        canvas {
+            border:1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="150" height="150"></canvas>
+
+</body>
+</html>
+<script>
+    window.onload = function(){
+        var canvas = document.querySelector('#canvas');
+        if(canvas.getContext){
+            var ctx = canvas.getContext('2d');
+            //绘制一个三角
+            /*ctx.beginPath();
+            ctx.moveTo(75,50);
+            ctx.lineTo(100,25);
+            ctx.lineTo(100,75);
+            ctx.fill();*/
+
+            /*ctx.beginPath();
+            ctx.moveTo(75,50);
+            ctx.lineTo(100,25);
+            ctx.lineTo(100,75);
+            ctx.closePath();
+            ctx.stroke();*/
+
+            ctx.beginPath();
+            ctx.moveTo(50,50);
+            ctx.lineTo(60,50);
+            ctx.lineTo(65,40);
+            ctx.lineTo(70,50);
+            ctx.lineTo(80,50);
+            ctx.lineTo(70,60);
+            ctx.lineTo(75,75);
+            ctx.lineTo(65,65);
+            ctx.lineTo(55,75);
+            ctx.lineTo(60,60);
+            //ctx.closePath();
+            ctx.fill();
+
+
+        }
+    }
+</script>

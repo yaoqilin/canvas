@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        canvas {
+            border:1px solid #ccc
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="150" height="150"></canvas>
+</body>
+</html>
+<script>
+    window.onload  = function(){
+        var canvas = document.querySelector('#canvas');
+        if(canvas.getContext){
+            var ctx = canvas.getContext('2d');
+            //在下面进行你的画布操作
+            ctx.fillStyle = 'rgb(200,0,0)';
+            ctx.fillRect(10,15,55,50);
+            ctx.fillStyle = 'rgba(0,0,200,0.5)';
+            ctx.fillRect(30,35,55,50);
+            ctx.fillStyle = 'rgba(0,200,0,0.5)';
+            ctx.fillRect(40,45,55,50);
+
+        }else{
+            alert("您的浏览器不支持当前canvas操作,请返回重新修改");
+        }
+    }
+</script>

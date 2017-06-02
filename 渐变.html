@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        canvas {
+            border:1px solid #ccc
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="150" height="150"></canvas>
+</body>
+</html>
+<script>
+    window.onload  = function(){
+        var canvas = document.querySelector('#canvas');
+        if(canvas.getContext){
+            var ctx = canvas.getContext('2d');
+            //在下面进行你的画布操作
+            //1,首先创建一个渐变的对象
+           /* var lineargradient = ctx.createLinearGradient(0,0,150,150);
+            //2.给这个渐变对象着色
+            lineargradient.addColorStop(0,'#000');
+            lineargradient.addColorStop(0.5,'#fff');
+            lineargradient.addColorStop(1,'#ccc');
+            ctx.fillStyle = lineargradient;
+            ctx.fillRect(0,0,150,150);*/
+
+            //画一个简单的线性渐变的例子
+            var radgrad = ctx.createRadialGradient(105,105,20,112,120,50);
+            radgrad.addColorStop(0,'rgb(10,179,140)');
+            radgrad.addColorStop(0.9,'rgb(130,171,186)')
+            radgrad.addColorStop(1,'rgba(0,176,240,0)');
+
+            ctx.fillStyle = radgrad;
+            ctx.fillRect(0,0,150,150);
+
+
+        }else{
+            alert("您的浏览器不支持当前canvas操作,请返回重新修改");
+        }
+    }
+</script>

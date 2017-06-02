@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        canvas {
+            border:1px solid #ccc
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="150" height="150"></canvas>
+</body>
+</html>
+<script>
+    window.onload  = function(){
+        var canvas = document.querySelector('#canvas');
+        if(canvas.getContext){
+            var ctx = canvas.getContext('2d');
+
+            //在绘制之前，我们可以设置下绘制的颜色
+            ctx.fillStyle = '#ccc';
+            ctx.strokeStyle = 'rgb(200,200,0)';
+            //画一个空心的矩形
+            ctx.strokeRect(10,10,50,50);
+            ctx.arc(100,80,30,0,0.1,true);
+            ctx.fill();
+
+        }else{
+            alert("您的浏览器不支持当前canvas操作,请返回重新修改");
+        }
+    }
+</script>
